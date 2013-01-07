@@ -89,7 +89,7 @@
     <header>
       <?php print render($title_prefix); ?>
       <?php if (!$page && $title): ?>
-        <h2<?php print $title_attributes; ?>><?php print $title; ?></h2>
+        <h1 class="mainTitle" <?php print $title_attributes; ?>><?php print $title; ?></h1>
       <?php endif; ?>
       <?php print render($title_suffix); ?>     
     </header>

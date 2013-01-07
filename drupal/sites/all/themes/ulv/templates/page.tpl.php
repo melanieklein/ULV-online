@@ -62,7 +62,7 @@
         <?php print $sidebar_second; ?>
       </aside><!-- /.sidebars -->
     <?php endif; ?>
-<div id="contFoot">
+<div class="contFoot">
   <?php print render($page['footer']); ?>
 </div>
 
