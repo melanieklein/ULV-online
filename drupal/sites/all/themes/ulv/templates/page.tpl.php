@@ -1,5 +1,6 @@
 <div class="headwrapper">
 <header>
+    <?php print render($page['header']); ?>
     <h1> <?php if ($logo): ?>
       <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" class="logo"><img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" /></a>
     <?php endif; ?>
@@ -29,8 +30,6 @@
 
       <?php print render($page['navigation']); ?>
 
-
-     <?php print render($page['header']); ?>
 </header>
 </div>
 
