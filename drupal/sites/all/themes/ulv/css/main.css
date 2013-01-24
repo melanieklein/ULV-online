@@ -629,6 +629,9 @@ nav {
   list-style-type: none;
   vertical-align: top;
 }
+.intDetails:nth-child(3) {
+  margin-right: 0;
+}
 .intDetailslast {
   width: 22.9em;
   display: inline-block;
@@ -739,6 +742,12 @@ footer {
 .smTitle {
   color: #f2f2f2;
   font-size: 1.3em;
+}
+#footer .views-row {
+  display: inline-block;
+  width: 23em;
+  vertical-align: top;
+  height: 8em;
 }
 /* ==========================================================================
    Media Queries
