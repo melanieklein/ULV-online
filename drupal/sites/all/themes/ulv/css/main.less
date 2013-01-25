@@ -680,6 +680,10 @@ margin-top: 10em;
   }
 }
 
+a{
+  color:@orange;
+}
+
 /* ==========================================================================
    Index
    ========================================================================== */
@@ -732,13 +736,12 @@ margin-top: 2.5em;
   clear:both;
 }
 
-.intDetails{
-  .three-colscont;
-  
 
+.intDetails {
+  .three-colscont;
 }
 
-.intDetails:nth-child(3){
+.intDetails:nth-child(3) {
   margin-right: 0;
 }
 
@@ -837,6 +840,139 @@ border-color:@lightGreen;
 .nbrHeure{
   width:6em;
 }
+
+/* ==========================================================================
+   Contact
+   ========================================================================== */
+
+
+   .contact{
+
+      .formwrap{
+        width: 22.6em;
+        padding-right: 6.7em;
+        float: left;
+      }
+      form{
+        
+    }
+
+      label{
+        line-height: 2.5em;
+      }
+      input{
+        width: 100%;
+        padding-left: 0.25em;
+        border-radius: 5px;
+        line-height: 2.3em;
+      }
+      textarea{
+        width: 100%;
+        padding: 0.25em;
+        border-radius: 5px;
+      }
+      input[type="submit"]{
+        width: 25%;
+        margin-top: 1em;
+        margin-bottom: 2.5em;
+        margin-left: 27%;
+      }
+
+      .req-field-desc{
+        line-height: 4.5em;
+        font-size: 0.75em;
+        float: left;
+      }
+   }
+
+  .directCont{
+
+    span{
+      display: block;
+    }
+    width: 41.8em;
+    float: right;
+
+  }
+
+  .acces{
+    clear: both;
+    padding-top: 1em;
+  }
+
+  .bur{
+    width: 50%;
+    float: left;
+    margin-right: 4em;
+  }
+
+  .secr{
+    width: 50%;
+    float: left;
+    margin-right: 4em;
+  }
+
+  .secrExec{
+    height: 14.5em;
+  }
+
+  .acces{
+    img{
+      width: 35.6em;
+      height: auto;
+      margin-right: 1.7em;
+      margin-top: 0.5em;
+      float: left;
+      margin-bottom: 2.5em;
+    }
+
+    h2{
+      margin:0em;
+    }
+
+    p{
+      margin-bottom: 0.5em;
+    }
+
+    a{
+      margin-top: 0em;
+    }
+  }
+
+  /* ==========================================================================
+   Publication
+   ========================================================================== */
+
+   .publications{
+    float: left;
+    width:66%;
+    margin-right: 1.7em;
+    header{
+      height:auto;
+    }
+
+    .meta{
+      float: left;
+      width: 12.3em;
+      font-weight: 700;
+      line-height: 1.6em;
+      margin-top: 0.9em;
+    }
+
+    .content{
+      max-width: 36em;
+      position: relative;
+      margin-left: 12.4em;
+      margin-bottom: 3em;
+    }
+   }
+
+   .filter{
+    a{
+      font-size: 1.2em;
+      color:@green;
+    }
+   }
 /* ==========================================================================
    Footer
    ========================================================================== */
@@ -854,36 +990,26 @@ footer{
   clear:both;
 }
 
-.colFoot{
-  .three-colscont;
+.altNavTitle{
+  display: inline-block;
+  width: 16em;
+  margin-right: 2em;
+  vertical-align: top;
   margin-top: 1.5em;
+  color: white;
+  height:12em;
 
   &:last-child{
-  margin-right: 0em;
+    margin-right: 0em;
+    margin-top: -5.7em;
+  }
 
-}
+  a{
+    color: @grey;
+  }
+  }
 
-a{
-  color:@grey;
-}
 
-a:hover{
-  text-decoration: undeline 1px;
-
-}
-}
-
-.smTitle{
-color:@grey;
-font-size: 1.3em;
-}
-
-#footer .views-row {
-  display: inline-block;
-width: 23em;
-vertical-align: top;
-height: 8em;
-}
 
 /* ==========================================================================
    Media Queries

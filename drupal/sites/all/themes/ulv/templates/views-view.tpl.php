@@ -29,16 +29,37 @@
 
 $view = views_get_current_view();
 
-if($view->name == "domaines_interets"){
+var_dump($view->name);
 
-?>
+if($view->name == 'domaines_interets' || $view->name == 'equipe' || $view->name == 'footer' || $view->name == 'collaborateurs'){
 
-  <div class="intDetails"><?php print $rows; ?></div>
+  if($view->name == 'domaines_interets'){
 
-  <?php
+    ?>
+    <div><?php print $rows; ?></div>
+
+    <?php 
   }
-    else
-    {
+  elseif ($view->name == 'equipe') {
+    ?>
+    <ul><?php print $rows; ?></ul>
+    <?php
+  }
+  elseif ($view->name == 'collaborateurs') {
+    ?>
+    <ul><?php print $rows; ?></ul>
+    <?php
+  }
+  elseif ($view->name == 'footer') {
+    ?>
+    <ul><?php print $rows; ?></ul>
+    <?php
+  }
+}
+
+
+else
+{
 ?>
 
 
@@ -103,4 +124,5 @@ if($view->name == "domaines_interets"){
   <?php endif; ?>
 
 </div><?php
-} /* class view */ ?>
+} /* class view */
+?>

@@ -28,6 +28,7 @@
 <?php
 $view = views_get_current_view();
 
+
 if($view->name == "domaines_interets"){
 	?>
 
@@ -35,6 +36,7 @@ if($view->name == "domaines_interets"){
 	<p><?php print $row->field_field_description[0]["rendered"]["#markup"]; ?></p>
 <?php
 }
+
 else {
 	foreach ($fields as $id => $field): ?>
   <?php if (!empty($field->separator)): ?>
