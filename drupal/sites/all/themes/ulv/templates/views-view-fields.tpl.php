@@ -28,15 +28,135 @@
 <?php
 $view = views_get_current_view();
 
+if(($view->name == 'domaines_interets') || ($view->name == 'equipe') || ($view->name == 'collaborateurs') || ($view->name == 'cliniques') || ($view->name == 'publications') || ($view->name == 'contactez_nous') ){
 
-if($view->name == "domaines_interets"){
-	?>
+    if($view->name == "domaines_interets"){
+    	?>
 
-	<h2><?php print $row->node_title; ?></h2>
-	<p><?php print $row->field_field_description[0]["rendered"]["#markup"]; ?></p>
+    	<h2><?php print $row->node_title; ?></h2>
+    	<p><?php print $row->field_field_description[0]["rendered"]["#markup"]; ?></p>
+    <?php
+    }
+
+    elseif($view->name == 'equipe') {
+
+      ?>
+
+    <div class="wrapInt">
+
+      <div class="imgEq">
+        <?php print render($row->field_field_photo); ?>
+      </div>
+
+      <div class="descr">
+        <hgroup>
+          <h2>
+            <?php print $row->field_field_pr_nom[0]["rendered"]["#markup"];?> <?php print $row->field_field_nom[0]["rendered"]["#markup"];?>
+          </h2>
+          <h3 class='descrPoste'><?php print $row->node_title; ?></h3>
+        </hgroup>
+        <p><?php print $row->field_field_cv[0]["rendered"]["#markup"]; ?></p>
+
+        <span><?php print $row->field_field_nom_specialite[0]["rendered"]["#markup"]; ?></span>
+     </div>
+
+    </div>
+
+      <?php
+    }
+
+
+    elseif($view->name == 'collaborateurs' || $view->name == 'cliniques') {
+
+      ?>
+
+    <div class="wrapInt">
+
+      <div class="imgEq">
+        <?php print render($row->field_field_photo); ?>
+      </div>
+
+      <div class="descr">
+        <hgroup>
+          <h2>
+            <?php print $row->field_field_pr_nom[0]["rendered"]["#markup"];?> <?php print $row->field_field_nom[0]["rendered"]["#markup"];?>
+          </h2>
+          <h3 class='descrPoste'><?php print $row->node_title; ?></h3>
+        </hgroup>
+        <p><?php print $row->field_field_cv[0]["rendered"]["#markup"]; ?></p>
+     </div>
+
+    </div>
+
+      <?php
+    }
+
+
+    elseif($view->name == 'publications'){
+      ?>
+
+      <div class="meta">
+        <span class="pubType"><?php print $row->field_field_type_support[0]["rendered"]["#markup"]; ?></span>
+        <p class="date">
+          <?php print $row->field_field_date_publication[0]["rendered"]["#markup"]; ?>
+        </p>
+        <p class="langue">
+          <span>
+            Langue&nbsp;: 
+          </span>
+          <span class="langue">
+            <?php print $row->field_field_langue[0]["rendered"]["#markup"]; ?>
+          </span>
+        </p>
+      </div>
+
+      <div class="content">
+        <header>
+
+          <h2 class="title"><?php print $row->node_title; ?></h2>
+
+        <p class="author">Article écrit par&nbsp;: 
+
+          <?php 
+          $length = sizeof($row->field_field_auteur);
+
+          for ($i=0;$i<$length;$i++){
+          print $row->field_field_auteur[$i]["rendered"]["#markup"] . ", ";
+          } 
+
+          ?>
+          </p> 
+      
+
+
+      </header>
+        <article>
+          <h3 class="hiddenTitle">Résumé de l'article</h3>
+          <?php print $row->field_field_resume[0]["rendered"]["#markup"]; ?>
+          <a href="<?php print $row->field_field_url[0]["rendered"]["#markup"];?>" title="Voir la publication sur le site Orbi">Lire sur Orbi</a>
+        </article>
+      </div>
+
+
 <?php
-}
+    }
 
+    elseif($view->name == 'contactez_nous'){
+?>
+      <h2><?php print $row->node_title; ?></h2>
+      <span><?php print $row->field_field_contactnom[0]["rendered"]["#markup"]; ?></span>
+      <span><?php print $row->field_field_ruenumero[0]["rendered"]["#markup"]; ?></span>
+      <span><?php print $row->field_field_code_postal[0]["rendered"]["#markup"]; ?> <?php print $row->field_field_ville[0]["rendered"]["#markup"]; ?></span>
+      <?php
+      $length2 = sizeof($row->field_field_personne);
+      for($j=0;$j<$length2;$j++){
+      ?>
+      <span><?php print $row->field_field_personne[$j]["rendered"]["#markup"]; ?></span>
+<?php
+    }
+
+}
+}
 else {
 	foreach ($fields as $id => $field): ?>
   <?php if (!empty($field->separator)): ?>

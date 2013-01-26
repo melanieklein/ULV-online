@@ -29,9 +29,9 @@
 
 $view = views_get_current_view();
 
-var_dump($view->name);
+//var_dump($view->name);
 
-if($view->name == 'domaines_interets' || $view->name == 'equipe' || $view->name == 'footer' || $view->name == 'collaborateurs'){
+if(($view->name == 'domaines_interets') || ($view->name == 'equipe') || ($view->name == 'collaborateurs') || ($view->name == 'cliniques') || ($view->name == 'footer')){
 
   if($view->name == 'domaines_interets'){
 
@@ -40,12 +40,7 @@ if($view->name == 'domaines_interets' || $view->name == 'equipe' || $view->name 
 
     <?php 
   }
-  elseif ($view->name == 'equipe') {
-    ?>
-    <ul><?php print $rows; ?></ul>
-    <?php
-  }
-  elseif ($view->name == 'collaborateurs') {
+  elseif ($view->name == 'equipe' || $view->name == 'collaborateurs' || $view->name == 'cliniques') {
     ?>
     <ul><?php print $rows; ?></ul>
     <?php
@@ -58,7 +53,7 @@ if($view->name == 'domaines_interets' || $view->name == 'equipe' || $view->name 
 }
 
 
-else
+elseif(($view->name != 'domaines_interets') AND ($view->name != 'equipe') AND ($view->name != 'collaborateurs') AND ($view->name != 'cliniques') AND ($view->name != 'footer'))
 {
 ?>
 

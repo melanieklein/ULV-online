@@ -35,7 +35,7 @@
 
     <div class="wrapper">
       <?php print render($page['highlighted']); ?>
-      <?php print $breadcrumb; ?>
+      <!--<?php print $breadcrumb; ?>-->
       <a id="main-content"></a>
       
       <?php print $messages; ?>
