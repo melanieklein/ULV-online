@@ -28,7 +28,7 @@
 <?php
 $view = views_get_current_view();
 
-if(($view->name == 'domaines_interets') || ($view->name == 'equipe') || ($view->name == 'collaborateurs') || ($view->name == 'cliniques') || ($view->name == 'publications') || ($view->name == 'contactez_nous') ){
+if(($view->name == 'domaines_interets') || ($view->name == 'equipe') || ($view->name == 'collaborateurs') || ($view->name == 'cliniques') || ($view->name == 'publications') || ($view->name == 'contactez_nous') || ($view->name == 'recherche') ){
 
     if($view->name == "domaines_interets"){
     	?>
@@ -156,6 +156,20 @@ if(($view->name == 'domaines_interets') || ($view->name == 'equipe') || ($view->
     }
 
 }
+
+    elseif($view->name == 'recherche'){
+?>
+      <?php print render($row->field_field_photo_partenaire); ?>
+      <h1><?php print $row->node_title; ?>, partenaire à <?php print $row->field_field_pays_partenaire[0]["rendered"]["#title"]; ?></h1>
+      <p><?php print $row->field_field_raison_partenariat[0]["rendered"]["#markup"]; ?></p>
+      <?php
+      if($row->field_field_lien_partenaire){?>
+      <a href="<?php print $row->field_field_lien_partenaire[0]["rendered"]["#markup"]; ?>">Visiter le site</a>
+      <?php
+      }
+
+    }
+
 }
 else {
 	foreach ($fields as $id => $field): ?>

@@ -31,7 +31,7 @@ $view = views_get_current_view();
 
 //var_dump($view->name);
 
-if(($view->name == 'domaines_interets') || ($view->name == 'equipe') || ($view->name == 'collaborateurs') || ($view->name == 'cliniques') || ($view->name == 'footer')){
+if(($view->name == 'domaines_interets') || ($view->name == 'equipe') || ($view->name == 'collaborateurs') || ($view->name == 'cliniques') || ($view->name == 'footer') || $view->name == 'recherche'){
 
   if($view->name == 'domaines_interets'){
 
@@ -46,6 +46,11 @@ if(($view->name == 'domaines_interets') || ($view->name == 'equipe') || ($view->
     <?php
   }
   elseif ($view->name == 'footer') {
+    ?>
+    <ul><?php print $rows; ?></ul>
+    <?php
+  }
+    elseif ($view->name == 'recherche') {
     ?>
     <ul><?php print $rows; ?></ul>
     <?php

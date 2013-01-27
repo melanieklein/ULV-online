@@ -8,7 +8,7 @@
  */
 $view = views_get_current_view();
 
-if( ($view->name == 'domaines_interets') || ($view->name == 'equipe') || ($view->name == 'collaborateurs') || ($view->name == 'cliniques') || ($view->name == 'footer')){
+if( ($view->name == 'domaines_interets') || ($view->name == 'equipe') || ($view->name == 'collaborateurs') || ($view->name == 'cliniques') || ($view->name == 'footer') || $view->name == 'recherche'){
 
 if($view->name == 'domaines_interets') {
   foreach ($rows as $row): ?>
@@ -40,8 +40,18 @@ elseif ($view->name == 'footer') {
 
 }
 
+elseif ($view->name == 'recherche') {
+  foreach ($rows as $row): ?>
+    <li>
+    <?php print $row; ?>
+    </li>
+
+<?php endforeach;
+
 }
-elseif( ($view->name != 'domaines_interets') AND ($view->name != 'equipe') AND ($view->name != 'collaborateurs') AND ($view->name != 'cliniques') AND ($view->name != 'footer') )
+
+}
+elseif( ($view->name != 'domaines_interets') AND ($view->name != 'equipe') AND ($view->name != 'collaborateurs') AND ($view->name != 'cliniques') AND ($view->name != 'footer') AND ($view->name != 'recherche') )
 {
 
 
